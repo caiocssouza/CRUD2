@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div th:replace="~{fragmentos/navprincipal :: nav}"></div>
+<div class="container">
+	<div class="row">
+	<div class="col">
+	<h1>Editar usuário</h1>
+	
+	<form th:action="@{/usuario/editar/{id}(id=${usuario.id})}" th:object="${usuario}" method="post">
+  <div class="form-group">
+    <label for="nome">Nome:</label>
+    <input type="text" class="form-control" id="nome" placeholder="Email" th:field="*{nome}">
+  </div>
+  <div class="form-group">
+    <label for="nome">CPF:</label>
+    <input type="text" class="form-control" id="cpf" placeholder="CPF" th:field="*{cpf}">
+  </div>
+  <div class="form-group">
+    <label for="nome">Data de nascimento:</label>
+    <input type="text" class="form-control" id="dataNascimento" placeholder="Data de nascimento" th:field="*{dataNascimento}">
+  </div>
+	<div class="form-group">
+    <label for="nome">E-mail:</label>
+    <input type="text" class="form-control" id="email" placeholder="E-mail" th:field="*{email}">
+  </div>
+   <div class="form-group">
+    <label for="nome">Login:</label>
+    <input type="text" class="form-control" id="login" placeholder="Login" th:field="*{login}">
+  </div>
+  <div class="form-group">
+    <label for="nome">Senha:</label>
+    <input type="text" class="form-control" id="senha" placeholder="Senha" th:field="*{senha}">
+  </div>
+ 
+  
+  <button type="submit" class="btn btn-primary">Alterar</button>
+</form>
+	</div>
+	</div>
+</div>
+
+	
+    
+</body>
+</html>
